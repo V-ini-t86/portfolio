@@ -1,11 +1,29 @@
-import React from 'react'
+import { Canvas } from "@react-three/fiber"
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { Experience } from "../component/Expierence"
 
-type Props = {}
+// Register GSAP ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
-const Portfolio = (props: Props) => {
+const Portfolio = () => {
   return (
-    <div>Portfolio</div>
+    <Canvas shadows camera={{ position: [3, 3, 3], fov: 30 }}>
+      <color attach="background" args={["#ececec"]} />
+      <Experience />
+    </Canvas>
   )
 }
 
 export default Portfolio
+
+// Simple Portfolio Page
+{/* <div>
+      <NavBar />
+      <HeroSection />
+      <SkillsDashboard />
+      <WorkTimeline />
+      <EducationTimeline />
+      <AchievementsSection />
+      <Footer />
+    </div> */}
